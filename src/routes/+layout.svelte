@@ -1,11 +1,11 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
-
-	let { children } = $props();
+  import "../app.css";
+  import { ClerkProvider } from "svelte-clerk";
+  import { PUBLIC_CLERK_PUBLISHABLE_KEY } from "$env/static/public";
+  import AuthWiring from "$lib/components/AuthWiring.svelte";
 </script>
 
-<svelte:head>
-	<link rel="icon" href={favicon} />
-</svelte:head>
-
-{@render children()}
+<ClerkProvider publishableKey={PUBLIC_CLERK_PUBLISHABLE_KEY}>
+  <AuthWiring />
+  <slot />
+</ClerkProvider>
