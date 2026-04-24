@@ -47,7 +47,7 @@ export default function HabitCell({ habitId, date, done, note, isToday }: Props)
   return (
     <>
       <button
-        className={`w-full aspect-square rounded-sm flex items-center justify-center relative transition-transform duration-75 active:scale-90 ${bg}`}
+        className={`w-full max-h-[2rem] aspect-square rounded-sm flex items-center justify-center relative transition-transform duration-75 active:scale-90 ${bg}`}
         onPointerDown={onPointerDown}
         onPointerUp={onPointerUp}
         onPointerLeave={onPointerUp}

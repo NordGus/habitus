@@ -1,42 +1,15 @@
-# sv
+# habitus
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A simple habit tracker, built while experimenting with Claude Code assisted development and hand-refined by a human to
+be deployable and maintanable.
 
-## Creating a project
+# The Experiment
 
-If you're seeing this, you've probably already done this step. Congrats!
+Using the Front-End Skill and Superpowers I started by vaguely defining the idea I wanted to explore, the technologies
+and services I wanted to integrate to Claude Code while using Sonnet 4.6 with plan mode enabled.
 
-```sh
-# create a new project
-npx sv create my-app
-```
+Thanks to superpowers I ended up 60 minutes brainstorming with the model on what routes it could take to implement the
+idea. Like basic UX ideas, data modeling and general layout. This brainstorming session to me is one of the best use
+cases for AI integrations in computing, and is also something that I've written about before, the so call AI as a
+revolution in Human Machine interface.
 
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-npx sv@0.15.1 create --template minimal --types ts --no-install .
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
