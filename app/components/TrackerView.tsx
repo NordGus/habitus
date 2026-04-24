@@ -1,5 +1,5 @@
 import { useSearch, useNavigate } from "@tanstack/react-router";
-import { useQuery, skipQuery } from "convex/react";
+import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import {
   getMonthDays,
@@ -27,11 +27,11 @@ export default function TrackerView() {
   const habits = useQuery(api.habits.listActive);
   const monthEntries = useQuery(
     api.entries.byMonth,
-    viewMode === "month" ? { month } : skipQuery
+    viewMode === "month" ? { month } : "skip"
   );
   const yearEntries = useQuery(
     api.entries.byYear,
-    viewMode === "year" ? { year: month.slice(0, 4) } : skipQuery
+    viewMode === "year" ? { year: month.slice(0, 4) } : "skip"
   );
   const entries = viewMode === "month" ? monthEntries : yearEntries;
 

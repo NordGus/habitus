@@ -1,9 +1,0 @@
-@import "tailwindcss";
-
-:root { color-scheme: dark; }
-
-html, body {
-  @apply bg-[#111] text-white h-full;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-}
