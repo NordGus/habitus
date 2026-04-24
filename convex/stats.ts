@@ -15,7 +15,15 @@ export const forHabit = query({
       .collect();
 
     const doneDates = new Set(allEntries.filter((e) => e.done).map((e) => e.date));
-    const today = new Date().toISOString().slice(0, 10);
+
+    // Use the user's stored timezone so "today" matches the local dates in entries.
+    const userPrefs = await ctx.db
+      .query("userPreferences")
+      .withIndex("by_user", (q) => q.eq("userId", userId))
+      .unique();
+    const timezone = userPrefs?.timezone ?? "UTC";
+    // en-CA locale produces "YYYY-MM-DD" format
+    const today = new Intl.DateTimeFormat("en-CA", { timeZone: timezone }).format(new Date());
 
     // Current streak: count consecutive done days backwards from today
     let currentStreak = 0;

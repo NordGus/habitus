@@ -3,7 +3,7 @@ import { expect, test } from "vitest";
 import { api } from "./_generated/api";
 import schema from "./schema";
 
-const HABIT_ARGS = { name: "Run", description: "", color: "#fff", icon: "🏃", categories: [] as const };
+const HABIT_ARGS = { name: "Run", description: "", color: "#fff", icon: "🏃", categories: [] as never[] };
 
 test("streak is 0 with no entries", async () => {
   const t = convexTest(schema);

@@ -37,7 +37,7 @@ export const toggle = mutation({
       .withIndex("by_habit_and_date", (q) => q.eq("habitId", habitId).eq("date", date))
       .unique();
     if (existing) {
-      await ctx.db.delete(existing._id);
+      await ctx.db.patch(existing._id, { done: !existing.done });
     } else {
       await ctx.db.insert("entries", { userId, habitId, date, done: true });
     }

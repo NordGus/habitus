@@ -1,4 +1,4 @@
-import { useSearch, useNavigate } from "@tanstack/react-router";
+import { useNavigate } from "@tanstack/react-router";
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import {
@@ -11,6 +11,7 @@ import {
 } from "../utils/dates";
 import HabitCell from "./HabitCell";
 import { useMemo, useState } from "react";
+import { Route } from "../routes/_app/tracker";
 
 function getAllYearDays(year: string): string[] {
   return Array.from({ length: 12 }, (_, i) =>
@@ -19,8 +20,8 @@ function getAllYearDays(year: string): string[] {
 }
 
 export default function TrackerView() {
-  const search = useSearch({ from: "/_app/tracker" });
-  const navigate = useNavigate({ from: "/_app/tracker" });
+  const search = Route.useSearch();
+  const navigate = useNavigate();
   const month = search.month ?? currentMonth();
   const [viewMode, setViewMode] = useState<"month" | "year">("month");
 
@@ -52,7 +53,7 @@ export default function TrackerView() {
   );
 
   function setMonth(m: string) {
-    navigate({ search: (prev) => ({ ...prev, month: m }) });
+    navigate({ to: "/tracker", search: { month: m } });
   }
 
   if (!habits || !entries) {

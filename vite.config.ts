@@ -5,7 +5,12 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [
-    TanStackRouterVite({ target: "react", autoCodeSplitting: true }),
+    TanStackRouterVite({
+      target: "react",
+      autoCodeSplitting: true,
+      routesDirectory: "./app/routes",
+      generatedRouteTree: "./app/routeTree.gen.ts",
+    }),
     react(),
     tailwindcss(),
   ],
