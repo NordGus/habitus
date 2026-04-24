@@ -20,13 +20,15 @@
 		"convex-test": "^0.0.49",
 		"tailwindcss": "^4.2.4",
 		"typescript": "^6.0.2",
-		"vite": "^8.0.7",
+		"vite": "^8.0.10",
 		"vitest": "^4.1.5"
 	},
 	"dependencies": {
 		"@clerk/react": "^6.4.3",
 		"@tanstack/react-router": "^1.168.23",
+		"@tanstack/react-start": "^1.167.45",
 		"convex": "^1.36.0",
+		"nitro": "^3.0.260415-beta",
 		"react": "^19.2.5",
 		"react-dom": "^19.2.5"
 	}
