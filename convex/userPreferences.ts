@@ -5,7 +5,7 @@ import { v } from "convex/values";
 export async function getAuthUserId(ctx: QueryCtx | MutationCtx): Promise<string> {
   const identity = await ctx.auth.getUserIdentity();
   if (!identity) throw new Error("Unauthenticated");
-  return identity.subject;
+  return identity.tokenIdentifier;
 }
 
 export const get = query({
