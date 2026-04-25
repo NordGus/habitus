@@ -49,3 +49,4 @@ Clerk and Svelte was problematic. So I ask Claude Code to migrate the UI layer t
 
 It was impressive how it made the migration specially to such a newer pseudo-framework like TanStack Start that is in
 release candidate, at the moment of writing. 
+

@@ -9,6 +9,7 @@ import { ClerkProvider } from "@clerk/react";
 import { ConvexReactClient } from "convex/react";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
 import { useAuth } from "@clerk/react";
+import { NotFound } from "../components/NotFound";
 import "../styles.css";
 
 const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL!);
@@ -23,6 +24,7 @@ export const Route = createRootRoute({
     ]
   }),
   component: RootComponent,
+  notFoundComponent: NotFound,
 });
 
 function RootComponent() {
