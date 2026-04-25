@@ -38,7 +38,7 @@ the compression process of a lot of coding/programming knowledge into the weight
 capabilities that are truly mind-blowing. Implementing the application.
 
 First of all, I'm bankrolling this myself with the cheapest Claude Subscription, Claude Pro. While the entire
-brainstorming session only took 42% of the session token limit (a 5 hour rolling window for token consumption)
+brainstorming session only took 42% of the session token limit (a 5-hour rolling window for token consumption)
 implementing the plan using a combination of Haiku 4.5 and Sonnet 4.6 took 2 5-hour session blocks where the limits were
 reached in 20~40 minutes.
 
@@ -49,8 +49,8 @@ Clerk and Svelte was problematic. So I asked Claude Code to migrate the UI layer
 
 It was impressive how it made the migration, especially to such a **newer** pseudo-framework like **TanStack Start** that 
 is in release candidate, at the moment of writing. So basically it took Claude Code 2 real-time days and 4 to 5 five-hour
-sessions to implement something I wanted to do for some time now. And I like it because I can check average TanStack 
-Start production code in a context that I ideated.
+sessions to implement something I wanted to do for some time now. And I like it because I can see what average TanStack
+Start production code looks like in a context that I ideated.
 
 Claude was basically my digital twin who is on the verge of an energy-drink-induced overdose. So it takes
 1/100th of the time to implement my delirious software ideas. 
