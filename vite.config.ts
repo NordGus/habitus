@@ -14,6 +14,9 @@ export default defineConfig({
   plugins: [
     tanstackStart({
       srcDirectory: "./app",
+      spa: {
+        enabled: true,
+      },
     }),
     react(),
     tailwindcss(),
