@@ -10,7 +10,10 @@ import { ConvexReactClient } from "convex/react";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
 import { useAuth } from "@clerk/react";
 import { NotFound } from "../components/NotFound";
-import "../styles.css";
+import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
+import { TanStackDevtools } from '@tanstack/react-devtools';
+
+import appCss from '../styles.css?url'
 
 const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL!);
 
@@ -21,7 +24,13 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "habitus - Habit Tracker" },
       { name: "description", content: "The simple habit tracker" },
-    ]
+    ],
+    links: [
+      {
+        rel: 'stylesheet',
+        href: appCss,
+      },
+    ],
   }),
   component: RootComponent,
   notFoundComponent: NotFound,
@@ -48,6 +57,17 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       <body>
         {children}
         <Scripts />
+        <TanStackDevtools
+          config={{
+            position: 'bottom-right',
+          }}
+          plugins={[
+            {
+              name: 'Tanstack Router',
+              render: <TanStackRouterDevtoolsPanel />,
+            },
+          ]}
+        />
       </body>
     </html>
   );
