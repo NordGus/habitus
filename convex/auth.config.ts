@@ -3,7 +3,7 @@ export default {
     {
       // Clerk JWT issuer — Convex fetches /.well-known/openid-configuration to discover JWKS.
       // applicationID must match the `aud` claim in the Clerk "convex" JWT template.
-      domain: process.env.VITE_CLERK_FRONTEND_API_URL!,
+      domain: import.meta.env.VITE_CLERK_FRONTEND_API_URL!,
       applicationID: "convex",
     },
   ],
