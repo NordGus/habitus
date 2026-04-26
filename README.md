@@ -77,3 +77,5 @@ Emperor has no clothes.
 > Gustavo A. Rodriguez Rivero - April 25th, 2026
 
 ## Vercel puede ser un dolor de cabeza si no sabes nada de la plataforma
+
+I think something is going horrobly wrong with my deploy
