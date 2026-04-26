@@ -36,5 +36,4 @@ function AppLayout() {
 
 export const Route = createFileRoute("/_app")({
   component: AppLayout,
-  ssr: false,
 });

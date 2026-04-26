@@ -56,17 +56,21 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       <body>
         {children}
         <Scripts />
-        <TanStackDevtools
-          config={{
-            position: 'bottom-right',
-          }}
-          plugins={[
-            {
-              name: 'Tanstack Router',
-              render: <TanStackRouterDevtoolsPanel />,
-            },
-          ]}
-        />
+        {
+          !import.meta.env.PROD && (
+            <TanStackDevtools
+              config={{
+                position: 'bottom-right',
+              }}
+              plugins={[
+                {
+                  name: 'Tanstack Router',
+                  render: <TanStackRouterDevtoolsPanel />,
+                },
+              ]}
+            />
+          )
+        }
       </body>
     </html>
   );

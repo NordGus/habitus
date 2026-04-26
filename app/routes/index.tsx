@@ -5,5 +5,4 @@ export const Route = createFileRoute("/")({
     throw redirect({ to: "/tracker" });
   },
   component: () => null,
-  ssr: false,
 });

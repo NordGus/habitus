@@ -6,5 +6,4 @@ export const Route = createFileRoute("/_app/tracker")({
     month: typeof search.month === "string" ? search.month : undefined,
   }),
   component: TrackerView,
-  ssr: false,
 });
