@@ -34,17 +34,16 @@ export const Route = createRootRoute({
   }),
   component: RootComponent,
   notFoundComponent: NotFound,
+  shellComponent: RootDocument,
 });
 
 function RootComponent() {
   return (
-    <RootDocument>
-      <ClerkProvider publishableKey={import.meta.env.VITE_CLERK_PUBLISHABLE_KEY!}>
-        <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
-          <Outlet />
-        </ConvexProviderWithClerk>
-      </ClerkProvider>
-    </RootDocument>
+    <ClerkProvider publishableKey={import.meta.env.VITE_CLERK_PUBLISHABLE_KEY!}>
+      <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
+        <Outlet />
+      </ConvexProviderWithClerk>
+    </ClerkProvider>
   );
 }
 
